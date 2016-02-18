@@ -25,12 +25,14 @@ $headers = array(
 );
  
 $query_params = array(
-	'subscription-key' => '268bd1768b1442eebe0ec0601f4cd908',
-	'analyzesAge' => 'true',
-	'analyzesGender' => 'true',
+	'subscription-key' => '7961e8972efe49fdb45cc089f9296ca1',
+	//'analyzesAnger' => 'true',
+	//'analyzesGender' => 'true',
 );
  
-$request = new Http_Request2('https://api.projectoxford.ai/face/v0/detections');
+//$request = new Http_Request2('https://api.projectoxford.ai/face/v0/detections');
+$request = new Http_Request2('https://api.projectoxford.ai/emotion/v1.0/recognize');
+
 $request->setConfig(array(
 	'ssl_verify_peer' => false,
 ));
