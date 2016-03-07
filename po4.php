@@ -27,7 +27,7 @@ $img_url = $_GET['url'];
 $headers = array(
     // Request headers
     'Content-Type' => 'application/json',
-    'Ocp-Apim-Subscription-Key' => '268bd1768b1442eebe0ec0601f4cd908',
+    'Ocp-Apim-Subscription-Key' => '',
 );
 
 
@@ -36,8 +36,7 @@ $request->setHeader($headers);
 $parameters = array(
     'returnFaceId' => 'true',
     'returnFaceLandmarks' => 'false',
-    'returnfaceAttributes' => 'age,smile,gender,facialHair,headPose',
-);
+    'returnfaceAttributes' => 'age,smile,gender');
 
 //var_dump($parameters);
 
@@ -55,7 +54,13 @@ $request->setBody($json);
 try
 {
     $response = $request->send();
-    echo $response->getBody();
+    //echo $response->getBody();
+    $temp = $response->getBody();
+    $temp = explode('{"' ,$temp);
+    foreach($temp as $e)
+    {
+        echo $e."</br>";
+    }
 }
 catch (HttpException $ex)
 {

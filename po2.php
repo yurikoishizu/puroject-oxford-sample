@@ -25,8 +25,8 @@ $headers = array(
 );
  
 $query_params = array(
-	'subscription-key' => '7961e8972efe49fdb45cc089f9296ca1',
-	//'analyzesAnger' => 'true',
+	'subscription-key' => '',
+	//'analyzesAge' => 'true',
 	//'analyzesGender' => 'true',
 );
  

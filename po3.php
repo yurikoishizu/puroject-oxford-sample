@@ -27,7 +27,7 @@ $url = $_GET['url'];
 $headers = array(
     // Request headers
     'Content-Type' => 'application/json',
-    'Ocp-Apim-Subscription-Key' => '7961e8972efe49fdb45cc089f9296ca1',
+    'Ocp-Apim-Subscription-Key' => '',
 );
 
 $request->setHeader($headers);
@@ -50,7 +50,13 @@ $request->setBody($json);
 try
 {
     $response = $request->send();
-    echo $response->getBody();
+    //echo $response->getBody();
+    $temp = $response->getBody();
+    $temp = explode('{"' ,$temp);
+    foreach($temp as $e)
+    {
+        echo $e."</br>";
+    }
 }
 catch (HttpException $ex)
 {
